@@ -1,0 +1,46 @@
+Prerequisites:
+•  Know everything (or as much as possible) about Linux/Ubuntu
+•  Learn everything about git
+
+Description:
+• Install Ubuntu/Debian/etc or get root access to an Ubuntu/Debian/etc machine 
+• Learn some useful Linux commands
+
+Proof that the task was completed successfully:
+
+1. Please analyze and comment on the output of the following commands:
+  $ uname -a
+  $ cat /proc/cpuinfo 
+  $ cat /proc/meminfo
+  # dmesg
+  $ pstree -p
+  $ ps aux 
+  $ ping 8.8.8.8
+  $ ip add
+  $ lspci
+  $ lsblk
+  $ lsusb
+  $ lscpu
+  $ ethtool
+  
+2. Show examples on how the following commands can be used:
+   $ lshw
+   $ find
+   $ grep
+   $ ssh
+   $ sudo <command>
+   $ iostat
+   $ mpstat
+   $ pidstat
+   $ chmod
+   $ chown
+   $ touch
+   $ ls / ls -lah
+   $ strace uname
+   $ ltrace uname
+   $ tcpdump
+
+3. Take a screenshot
+
+Deliverables:
+•  task1-comments.txt (for 1.), task1-cmds.txt(for 2.) and task1-screenshot.png (for 3.) downloadable from GitHub

@@ -1,0 +1,354 @@
+1.  $ lshw // Lshw  is  a  small tool to extract detailed information on the hardware
+       	   // configuration of the machine.
+       	   
+       	   // You can use it with different arguments like:
+       	          lshw  [  [ -html ]  [ -short ]  [ -xml ]  [ -json ]  [ -businfo ]  ]  [
+       -dump filename ]  [ -class class... ]  [ -disable test... ]  [  -enable
+       test... ]  [ -sanitize ]  [ -numeric ]  [ -quiet ]  [ -notime ]
+
+	   // And the output may ussually look something like this:
+	   alex@alex-VirtualBox:~$ lshw -short
+WARNING: you should run this program as super-user.
+H/W path            Device      Class       Description
+=======================================================
+                                system      Computer
+/0                              bus         Motherboard
+/0/0                            memory      8GiB System memory
+/0/1                            processor   Intel(R) Core(TM) i5-8300H CPU @ 2.3
+/0/100                          bridge      440FX - 82441FX PMC [Natoma]
+/0/100/1                        bridge      82371SB PIIX3 ISA [Natoma/Triton II]
+/0/100/1/0                      input       PnP device PNP0303
+/0/100/1/1                      input       PnP device PNP0f03
+/0/100/1.1          scsi1       storage     82371AB/EB/MB PIIX4 IDE
+/0/100/1.1/0.0.0    /dev/cdrom  disk        CD-ROM
+/0/100/1.1/0.0.0/0  /dev/cdrom  disk        
+/0/100/2            /dev/fb0    display     SVGA II Adapter
+/0/100/3            enp0s3      network     82540EM Gigabit Ethernet Controller
+/0/100/4            input8      input       VirtualBox mouse integration
+/0/100/5            card0       multimedia  82801AA AC'97 Audio Controller
+/0/100/6                        bus         KeyLargo/Intrepid USB
+/0/100/7                        bridge      82371AB/EB/MB PIIX4 ACPI
+/0/100/b                        bus         82801FB/FBM/FR/FW/FRW (ICH6 Family) 
+/0/100/d                        storage     82801HM/HEM (ICH8M/ICH8M-E) SATA Con
+/1                  input0      input       Power Button
+/2                  input1      input       Sleep Button
+/3                  input2      input       AT Translated Set 2 keyboard
+/4                  input4      input       Video Bus
+/5                  input5      input       ImExPS/2 Generic Explorer Mouse
+/6                  input6      input       VirtualBox USB Tablet
+
+
+2.  $ find // Find is a search for files in a directory hierarchy command.
+	    
+	   // You can use it with different arguments like:
+	           find  [-H]  [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [ex‐
+       pression]
+            
+           // And the output may ussually look something like this:
+            alex@alex-VirtualBox:~/Desktop$ find WRP/Task1
+			WRP/Task1
+			WRP/Task1/task1-comments.txt
+			WRP/Task1/prerequisites.txt
+			WRP/Task1/task1-cmds.txt
+
+            
+
+3.  $ grep // Grep  searches  for  PATTERNS  in  each  FILE.  PATTERNS is one or more
+           // patterns separated by newline characters, and  grep  prints  each  line
+           // that  matches a pattern.  Typically PATTERNS should be quoted when grep
+           // is used in a shell command.
+	   
+	   // You can use it with different arguments like:
+	          grep [OPTION...] PATTERNS [FILE...]
+		  grep [OPTION...] -e PATTERNS ... [FILE...]
+  	          grep [OPTION...] -f PATTERN_FILE ... [FILE...]
+  	          
+           // And the output may ussually look something like this:
+           alex@alex-VirtualBox:~$ ls | grep 'D'
+			Desktop
+			Documents
+			Downloads
+
+4.  $ ssh  // Ssh (SSH client) is a program for logging into a remote machine and for
+     	   // executing commands on a remote machine.
+     	   
+     	   // You can use it with different arguments like:
+	     ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]
+		 [-c cipher_spec] [-D [bind_address:]port] [-E log_file]
+		 [-e escape_char] [-F configfile] [-I pkcs11] [-i identity_file]
+		 [-J destination] [-L address] [-l login_name] [-m mac_spec]
+		 [-O ctl_cmd] [-o option] [-p port] [-Q query_option] [-R address]
+		 [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]] destination
+		 [command [argument ...]]
+    	  // And the output may ussually look something like this:
+    	  alex@alex-VirtualBox:~$ ssh localhost
+		alex@localhost's password: 
+		Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 6.5.0-26-generic x86_64)
+
+		 * Documentation:  https://help.ubuntu.com
+		 * Management:     https://landscape.canonical.com
+		 * Support:        https://ubuntu.com/pro
+
+		Expanded Security Maintenance for Applications is not enabled.
+
+		0 updates can be applied immediately.
+
+		Enable ESM Apps to receive additional future security updates.
+		See https://ubuntu.com/esm or run: sudo pro status
+
+		Last login: Fri Mar 29 21:14:14 2024 from 127.0.0.1
+		alex@alex-VirtualBox:~$ 
+
+
+
+5.  $ sudo <command> // Sudo allows a permitted user to execute a command as the superuser or
+		     // another user, as specified by the security policy.
+		     
+		     // You can use it with different arguments like:
+		          sudo -h | -K | -k | -V
+		     sudo -v [-ABknS] [-g group] [-h host] [-p prompt] [-u user]
+		     sudo -l [-ABknS] [-g group] [-h host] [-p prompt] [-U user] [-u user]
+			  [command]
+		     sudo [-ABbEHnPS] [-C num] [-D directory] [-g group] [-h host] [-p prompt]
+			  [-R directory] [-r role] [-t type] [-T timeout] [-u user]
+			  [VAR=value] [-i | -s] [command]
+		     sudoedit [-ABknS] [-C num] [-D directory] [-g group] [-h host]
+			  [-p prompt] [-R directory] [-r role] [-t type] [-T timeout]
+			  [-u user] file ...
+
+           	     // And the output may ussually look something like this:
+           	     
+           	     alex@alex-VirtualBox:~$ sudo apt update
+			[sudo] password for alex: 
+			Hit:1 http://ro.archive.ubuntu.com/ubuntu jammy InRelease
+			Get:2 http://ro.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+			Get:3 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+			Hit:4 http://ro.archive.ubuntu.com/ubuntu jammy-backports InRelease
+			Fetched 229 kB in 1s (209 kB/s)    
+			Reading package lists... Done
+			Building dependency tree... Done
+			Reading state information... Done
+			All packages are up to date.
+
+6.  $ iostat // The iostat command is used for monitoring  system  input/output  device
+       	     // loading  by  observing  the  time the devices are active in relation to
+       	     // their average transfer rates.
+       	     
+	     // You can use it with different arguments like:
+	            iostat [ -c ] [ -d ] [ -h ] [ -k | -m ] [ -N ] [ -s ] [ -t ] [ -V  ]  [
+       -x  ] [ -y ] [ -z ] [ --dec={ 0 | 1 | 2 } ] [ { -f | +f } directory ] [
+       -j { ID | LABEL | PATH | UUID | ... } ] [  -o  JSON  ]  [  [  -H  ]  -g
+       group_name  ]  [ --human ] [ --pretty ] [ -p [ device[,...] | ALL ] ] [
+       device [...] | ALL ] [ interval [ count ] ]
+       
+       	     // And the output may ussually look something like this:
+       	     
+       	     alex@alex-VirtualBox:~$ iostat -c
+       	     Linux 6.5.0-26-generic (alex-VirtualBox) 	29.03.2024 	_x86_64_	(4 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,37    0,01    0,65    0,04    0,00   98,93
+
+7.  $ mpstat // The mpstat command writes to standard output activities for each avail‐
+       	     // able processor, processor 0 being the first one.
+       	     
+       	     // You can use it with different arguments like:
+       	            mpstat  [ -A ] [ --dec={ 0 | 1 | 2 } ] [ -n ] [ -u ] [ -T ] [ -V ] [ -I
+       { keyword[,...] | ALL } ] [ -N { node_list | ALL } ] [ -o JSON ] [ -P {
+       cpu_list | ALL } ] [ interval [ count ] ]
+       
+       	     // And the output may ussually look something like this:
+       	     
+       	     alex@alex-VirtualBox:~$ mpstat -n
+		Linux 6.5.0-26-generic (alex-VirtualBox) 	29.03.2024 	_x86_64_	(4 CPU)
+
+		21:37:39    NODE    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+		21:37:39     all    0,38    0,01    0,55    0,04    0,00    0,11    0,00    0,00    0,00   98,90
+
+8.  $ pidstat // The  pidstat  command is used for monitoring individual tasks currently
+       	      // being managed by the Linux kernel.
+       	      
+       	      // You can use it with different arguments like:
+       	      
+       	             pidstat  [ -d ] [ -H ] [ -h ] [ -I ] [ -l ] [ -R ] [ -r ] [ -s ] [ -t ]
+       [ -U [ username ] ] [ -u ] [ -V ] [ -v ] [ -w  ]  [  -C  comm  ]  [  -G
+       process_name  ] [ --dec={ 0 | 1 | 2 } ] [ --human ] [ -p { pid[,...]  |
+       SELF | ALL } ] [ -T { TASK | CHILD | ALL } ] [ interval [ count ]  ]  [
+       -e program args ]
+
+       	      // And the output may ussually look something like this:
+       	      
+       	      alex@alex-VirtualBox:~$ pidstat -U alex
+Linux 6.5.0-26-generic (alex-VirtualBox) 	29.03.2024 	_x86_64_	(4 CPU)
+
+21:41:12        USER       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+21:41:12        alex      2516    0,00    0,00    0,00    0,00    0,00     1  systemd
+21:41:12        alex      2523    0,00    0,00    0,00    0,00    0,00     1  pipewire
+21:41:12        alex      2524    0,00    0,00    0,00    0,00    0,00     0  pipewire-media-
+
+9.  $ chmod // chmod changes the file mode bits of each given file according to mode, which can be either a symbolic representation  of changes to make, or 			an octal number representing the bit pattern for the new mode bits.
+
+       	    // You can use it with different arguments like:
+       	    
+	       chmod [OPTION]... MODE[,MODE]... FILE...
+	       chmod [OPTION]... OCTAL-MODE FILE...
+	       chmod [OPTION]... --reference=RFILE FILE...
+
+       	      // And the output may ussually look something like this:
+       	      
+       	      alex@alex-VirtualBox:~/Desktop/Python_Testing$ chmod -x test.py
+		alex@alex-VirtualBox:~/Desktop/Python_Testing$ ls -a
+		.  ..  alarm.wav  final_alarm.wav  test.py
+		alex@alex-VirtualBox:~/Desktop/Python_Testing$ ls -la
+		total 428
+		drwxrwxr-x 2 alex alex   4096 mar 28 01:13 .
+		drwxr-xr-x 4 alex alex   4096 mar 28 23:53 ..
+		-rw-rw-r-- 1 alex alex 190668 mar 28 00:39 alarm.wav
+		-rw-rw-r-- 1 alex alex 227752 mar 28 01:13 final_alarm.wav
+		-rw-rw-r-- 1 alex alex   5858 mar 28 01:58 test.py
+		alex@alex-VirtualBox:~/Desktop/Python_Testing$ chmod +x test.py
+		alex@alex-VirtualBox:~/Desktop/Python_Testing$ ls -la
+		total 428
+		drwxrwxr-x 2 alex alex   4096 mar 28 01:13 .
+		drwxr-xr-x 4 alex alex   4096 mar 28 23:53 ..
+		-rw-rw-r-- 1 alex alex 190668 mar 28 00:39 alarm.wav
+		-rw-rw-r-- 1 alex alex 227752 mar 28 01:13 final_alarm.wav
+		-rwxrwxr-x 1 alex alex   5858 mar 28 01:58 test.py
+
+
+10. $ chown // chown changes the user and/or group ownership of each given file.
+
+       	    // You can use it with different arguments like:
+       	           chown [OPTION]... [OWNER][:[GROUP]] FILE...
+       		   chown [OPTION]... --reference=RFILE FILE...
+       	    
+       	    // And the output may ussually look something like this:
+		alex@alex-VirtualBox:~/Desktop/Python_Testing$ chown alex alarm.wav
+		alex@alex-VirtualBox:~/Desktop/Python_Testing$ ls -la
+		total 428
+		drwxrwxr-x 2 alex alex   4096 mar 28 01:13 .
+		drwxr-xr-x 4 alex alex   4096 mar 28 23:53 ..
+		-rw-rw-r-- 1 alex alex 190668 mar 28 00:39 alarm.wav
+		-rw-rw-r-- 1 alex alex 227752 mar 28 01:13 final_alarm.wav
+		-rwxrwxr-x 1 alex alex   5858 mar 28 01:58 test.py
+
+11. $ touch // Update the access and modification times of each FILE to the current time.
+
+	    // You can use it with different arguments like:
+	
+	    -a     change only the access time
+
+            -c, --no-create
+              do not create any files
+
+	    // And the output may ussually look something like this:
+	    
+	    alex@alex-VirtualBox:~/Desktop/Python_Testing$ touch command_testing.txt
+		alex@alex-VirtualBox:~/Desktop/Python_Testing$ ls
+		alarm.wav  command_testing.txt  final_alarm.wav  test.py
+
+12. $ ls / ls -lah // List  information about the FILEs (the current directory by default).
+
+		   // You can use it with different arguments like:
+		   
+		       -a, --all
+              do not ignore entries starting with .
+
+		       -A, --almost-all
+			      do not list implied . and ..
+
+		       --author
+			      with -l, print the author of each file
+
+		   // And the output may ussually look something like this:
+		   
+		   alex@alex-VirtualBox:~/Desktop/Python_Testing$ ls -la
+			total 428
+			drwxrwxr-x 2 alex alex   4096 mar 29 22:21 .
+			drwxr-xr-x 4 alex alex   4096 mar 28 23:53 ..
+			-rw-rw-r-- 1 alex alex 190668 mar 28 00:39 alarm.wav
+			-rw-rw-r-- 1 alex alex      0 mar 29 22:21 command_testing.txt
+			-rw-rw-r-- 1 alex alex 227752 mar 28 01:13 final_alarm.wav
+			-rwxrwxr-x 1 alex alex   5858 mar 28 01:58 test.py
+
+13. $ strace uname // In the simplest case strace runs the specified command until it exits.
+
+	
+		   // You can use it with different arguments like:
+	strace [-ACdffhikqqrtttTvVwxxyyzZ] [-I n] [-b execve] [-e expr]... [-O overhead]
+              [-S sortby] [-U columns] [-a column] [-o file] [-s strsize] [-X format]
+              [-P path]... [-p pid]... [--seccomp-bpf] { -p pid | [-DDD] [-E var[=val]]...
+              [-u username] command [args] }
+
+       strace -c [-dfwzZ] [-I n] [-b execve] [-e expr]... [-O overhead] [-S sortby]
+              [-U columns] [-P path]... [-p pid]... [--seccomp-bpf] { -p pid | [-DDD]
+              [-E var[=val]]... [-u username] command [args] }
+              
+		   // And the output may ussually look something like this:
+		   
+		   alex@alex-VirtualBox:~/Desktop$ strace ssh
+			execve("/usr/bin/ssh", ["ssh"], 0x7ffe0035fb20 /* 33 vars */) = 0
+			brk(NULL)                               = 0x58a83c97d000
+			arch_prctl(0x3001 /* ARCH_??? */, 0x7ffe77e2de00) = -1 EINVAL (Invalid argument)
+			mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7c9cc0812000
+			access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+			openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+			newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=59251, ...}, AT_EMPTY_PATH) = 0
+			mmap(NULL, 59251, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7c9cc0803000
+			close(3)                                = 0
+
+14. $ ltrace uname // ltrace  is  a program that simply runs the specified command until it exits.
+
+		   // You can use it with different arguments like:
+		   
+		          ltrace [-e filter|-L] [-l|--library=library_pattern] [-x filter] [-S] [-b|--no-signals]
+       [-i] [-w|--where=nr] [-r|-t|-tt|-ttt] [-T] [-F  filename]  [-A  maxelts]  [-s  strsize]
+       [-C|--demangle] [-a|--align column] [-n|--indent nr] [-o|--output filename] [-D|--debug
+       mask] [-u username] [-f] [-p pid] [[--] command [arg ...]]
+
+       ltrace -c [-e filter|-L] [-l|--library=library_pattern] [-x filter]  [-S]  [-o|--output
+       filename] [-f] [-p pid] [[--] command [arg ...]]
+
+		   // And the output may ussually look something like this:
+		   
+		   alex@alex-VirtualBox:~/Desktop$ ltrace uname
+			strrchr("uname", '/')                                      = nil
+			setlocale(LC_ALL, "")                                      = "LC_CTYPE=en_US.UTF-8;LC_NUMERIC="...
+			bindtextdomain("coreutils", "/usr/share/locale")           = "/usr/share/locale"
+			textdomain("coreutils")                                    = "coreutils"
+			__cxa_atexit(0x609367afbf90, 0, 0x609367b00008, 0)         = 0
+			getopt_long(1, 0x7fff8e792b38, "asnrvmpio", 0x609367affa80, nil) = -1
+			uname(0x7fff8e7925e0)                                      = 0
+			
+15. $ tcpdump // Tcpdump prints out a description of the contents of packets on a network 			interface that
+       match the Boolean expression; the description is preceded by a time stamp, 	printed,  by
+       default,  as hours, minutes, seconds, and fractions of a second since midnight.
+       
+   	     // You can use it with different arguments like:
+   	     
+   	            tcpdump [ -AbdDefhHIJKlLnNOpqStuUvxX# ] [ -B buffer_size ]
+               [ -c count ] [ --count ] [ -C file_size ]
+               [ -E spi@ipaddr algo:secret,...  ]
+               [ -F file ] [ -G rotate_seconds ] [ -i interface ]
+               [ --immediate-mode ] [ -j tstamp_type ] [ -m module ]
+               [ -M secret ] [ --number ] [ --print ] [ -Q in|out|inout ]
+               [ -r file ] [ -s snaplen ] [ -T type ] [ --version ]
+               [ -V file ] [ -w file ] [ -W filecount ] [ -y datalinktype ]
+               [ -z postrotate-command ] [ -Z user ]
+               [ --time-stamp-precision=tstamp_precision ]
+               [ --micro ] [ --nano ]
+               [ expression ]
+
+	    // And the output may ussually look something like this:
+	    
+	    alex@alex-VirtualBox:~$ sudo tcpdump
+		tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+		listening on enp0s3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+
+		^C
+		0 packets captured
+		0 packets received by filter
+		0 packets dropped by kernel
+
+       
+
